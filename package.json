@@ -28,13 +28,6 @@
       }
     ],
     "keybindings": [
-      // |-----------------------------|
-      // |        ⌘ + direction        |
-      // |-----------------------------|
-      // Move to the far end in each direction
-      //   ⌘ Up
-      // --------
-      // Move to the Top of the document
       {
         "key": "ctrl+up",
         "mac": "cmd+up",
@@ -47,9 +40,6 @@
         "command": "cursorTopSelect",
         "when": "textInputFocus"
       },
-      //   ⌘ Down
-      // ----------
-      // Move to the Bottom of the document
       {
         "key": "ctrl+down",
         "mac": "cmd+down",
@@ -62,9 +52,6 @@
         "command": "cursorBottomSelect",
         "when": "textInputFocus"
       },
-      //   ⌘ Left
-      // ----------
-      // Move Left to the Start of the Line
       {
         "key": "ctrl+left",
         "mac": "cmd+left",
@@ -77,9 +64,6 @@
         "command": "cursorHomeSelect",
         "when": "textInputFocus"
       },
-      //   ⌘ Right
-      // -----------
-      // Move Right to the End of the Line
       {
         "key": "ctrl+right",
         "mac": "cmd+right",
@@ -92,31 +76,18 @@
         "command": "cursorEndSelect",
         "when": "textInputFocus"
       },
-      //   ⌘ Backspace
-      // ---------------
-      // Delete Left to the Start of the Line
       {
         "key": "ctrl+backspace",
         "mac": "cmd+backspace",
         "command": "deleteAllLeft",
         "when": "textInputFocus && !editorReadonly"
       },
-      //   ⌘ Delete
-      // ------------
-      // Delete Right to the End of the Line
       {
         "key": "ctrl+delete",
         "mac": "cmd+delete",
         "command": "deleteAllRight",
         "when": "textInputFocus && !editorReadonly"
       },
-      // |-----------------------------|
-      // |        ⌥ + direction        |
-      // |-----------------------------|
-      // Move by whitespace
-      //   ⌥ Up
-      // --------
-      // move to the prev blank line
       {
         "key": "alt+up",
         "command": "cursorMove",
@@ -134,9 +105,6 @@
         },
         "when": "editorTextFocus"
       },
-      //   ⌥ Down
-      // ----------
-      // move to the next blank line
       {
         "key": "alt+down",
         "command": "cursorMove",
@@ -154,9 +122,6 @@
         },
         "when": "editorTextFocus"
       },
-      //   ⌥ Left
-      // ----------
-      // Move One Whole Word to the Left
       {
         "key": "alt+left",
         "command": "cursorWordLeft",
@@ -167,9 +132,6 @@
         "command": "cursorWordLeftSelect",
         "when": "textInputFocus"
       },
-      //   ⌥ Right
-      // -----------
-      // Move One Whole Word to the Right
       {
         "key": "alt+right",
         "command": "cursorWordEndRight",
@@ -180,30 +142,16 @@
         "command": "cursorWordEndRightSelect",
         "when": "textInputFocus"
       },
-      //   ⌥ Backspace
-      // ---------------
-      // Delete One Whole Word to the Left
       {
         "key": "alt+backspace",
         "command": "deleteWordLeft",
         "when": "textInputFocus && !editorReadonly"
       },
-      //   ⌥ Delete
-      // ------------
-      // Delete One Whole Word to the Right
       {
         "key": "alt+delete",
         "command": "deleteWordRight",
         "when": "textInputFocus && !editorReadonly"
       },
-      // |---------------------------------|
-      // |        ^ + ⌥ + direction        |
-      // |---------------------------------|
-      // These are exactly like the ⌥ keys,
-      // but with a bit more "contol"...
-      //   ^ ⌥ Left
-      // ------------
-      // MoveOneWordPART
       {
         "key": "win+alt+left",
         "mac": "ctrl+alt+left",
@@ -216,9 +164,6 @@
         "command": "cursorWordPartLeftSelect",
         "when": "textInputFocus"
       },
-      //   ^ ⌥ Right
-      // -------------
-      // MoveOneWordPART
       {
         "key": "win+alt+right",
         "mac": "ctrl+alt+right",
@@ -231,27 +176,18 @@
         "command": "cursorWordPartRightSelect",
         "when": "textInputFocus"
       },
-      //   ^ ⌥ Backspace
-      // -----------------
-      // DeleteOneWordPART
       {
         "key": "win+alt+backspace",
         "mac": "ctrl+alt+backspace",
         "command": "deleteWordPartLeft",
         "when": "textInputFocus && !editorReadonly"
       },
-      //   ^ ⌥ Delete
-      // --------------
-      // DeleteOneWordPART
       {
         "key": "win+alt+delete",
         "mac": "ctrl+alt+delete",
         "command": "deleteWordPartRight",
         "when": "textInputFocus && !editorReadonly"
       },
-      //   ^ ⌥ Up
-      // -------------
-      // Move Up part of a Page
       {
         "key": "alt+win+up",
         "mac": "alt+ctrl+up",
@@ -264,9 +200,6 @@
         "command": "quickNav.jumpLinesUpSelect",
         "when": "editorTextFocus"
       },
-      //   ^ ⌥ Down
-      // -------------
-      // Move Down part of a Page
       {
         "key": "alt+win+down",
         "mac": "alt+ctrl+down",
@@ -279,13 +212,6 @@
         "command": "quickNav.jumpLinesDownSelect",
         "when": "editorTextFocus"
       },
-      // |-----------------------------|
-      // |        ^ + direction        |
-      // |-----------------------------|
-      // Move content using the cursor
-      //   ^ Up
-      // --------
-      // Move Line Above
       {
         "key": "win+up",
         "mac": "ctrl+up",
@@ -298,9 +224,6 @@
         "command": "editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
       },
-      //   ^ Down
-      // ----------
-      // Move Line Below
       {
         "key": "win+down",
         "mac": "ctrl+down",
@@ -313,9 +236,6 @@
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
       },
-      //   ^ Left
-      // ----------
-      // Move Caret Left
       {
         "key": "win+left",
         "mac": "ctrl+left",
@@ -329,19 +249,6 @@
         "when": "textInputFocus && !editorHasSelection"
       },
       {
-        // copy selection left
-
-      },
-      {
-        // copy character left
-
-      },
-
-
-      //   ^ Right
-      // -----------
-      // Move Caret Right
-      {
         "key": "win+right",
         "mac": "ctrl+right",
         "command": "editor.action.moveCarretRightAction",
@@ -353,7 +260,6 @@
         "command": "editor.action.transposeLetters",
         "when": "textInputFocus && !editorHasSelection"
       },
-      // remove
       {
         "key": "alt+up",
         "command": "-editor.action.moveLinesUpAction",
