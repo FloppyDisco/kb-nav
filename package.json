@@ -329,15 +329,12 @@
         "when": "textInputFocus && !editorHasSelection"
       },
       {
-        // copy selection left
-
+        "key": "shift+win+left",
+        "mac": "shift+ctrl+left",
+        "command": "quickNav.copyCaretLeftAction",
+        "when": "textInputFocus && editorHasSelection"
       },
-      {
-        // copy character left
-
-      },
-
-
+      
       //   ^ Right
       // -----------
       // Move Caret Right
