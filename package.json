@@ -9,7 +9,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
   "contributes": {
     "configuration": {
@@ -17,7 +17,7 @@
         "quickNav.numberOfLinesToJump": {
           "type": "number",
           "default": 3,
-          "description": "The number of lines the cursor will move up or down when `editor.action.jumpLinesUp` or `editor.action.jumpLinesDown` is called"
+          "description": "The number of lines the cursor will jump when `quickNav.jumpCursorUp` or `quickNav.jumpCursorDown` is called"
         }
       }
     },
@@ -191,25 +191,25 @@
       {
         "key": "alt+win+up",
         "mac": "alt+ctrl+up",
-        "command": "quickNav.jumpLinesUp",
+        "command": "quickNav.jumpCursorUp",
         "when": "editorTextFocus"
       },
       {
         "key": "shift+alt+win+up",
         "mac": "shift+alt+ctrl+up",
-        "command": "quickNav.jumpLinesUpSelect",
+        "command": "quickNav.jumpCursorUpSelect",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+win+down",
         "mac": "alt+ctrl+down",
-        "command": "quickNav.jumpLinesDown",
+        "command": "quickNav.jumpCursorDown",
         "when": "editorTextFocus"
       },
       {
         "key": "shift+alt+win+down",
         "mac": "shift+alt+ctrl+down",
-        "command": "quickNav.jumpLinesDownSelect",
+        "command": "quickNav.jumpCursorDownSelect",
         "when": "editorTextFocus"
       },
       {

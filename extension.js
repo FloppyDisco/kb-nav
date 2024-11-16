@@ -11,7 +11,7 @@ function activate(context) {
 	console.log('Congratulations, your extension "quickNav" is now active!');
 	context.subscriptions.push(
 
-		vscode.commands.executeCommand("quickNav.jumpCursorUp" ,() => {
+		vscode.commands.registerCommand("quickNav.jumpCursorUp", () => {
 			vscode.commands.executeCommand("cursorMove",{
 				to: "up",
 				by: "line",
@@ -19,7 +19,7 @@ function activate(context) {
 			})
 		}),
 
-		vscode.commands.executeCommand("quickNav.jumpCursorDown" ,() => {
+		vscode.commands.registerCommand("quickNav.jumpCursorDown", () => {
 			vscode.commands.executeCommand("cursorMove",{
 				to: "down",
 				by: "line",
@@ -27,7 +27,7 @@ function activate(context) {
 			})
 		}),
 
-		vscode.commands.executeCommand("quickNav.jumpCursorUpSelect" ,() => {
+		vscode.commands.registerCommand("quickNav.jumpCursorUpSelect", () => {
 			vscode.commands.executeCommand("cursorMove",{
 				to: "up",
 				by: "line",
@@ -36,7 +36,7 @@ function activate(context) {
 			})
 		}),
 
-		vscode.commands.executeCommand("quickNav.jumpCursorDownSelect" ,() => {
+		vscode.commands.registerCommand("quickNav.jumpCursorDownSelect", () => {
 			vscode.commands.executeCommand("cursorMove",{
 				to: "down",
 				by: "line",
@@ -45,13 +45,13 @@ function activate(context) {
 			})
 		}),
 
-		vscode.commands.executeCommand("quickNav.transposeLettersLeft",() => {
+		vscode.commands.registerCommand("quickNav.transposeLettersLeft", () => {
 			vscode.commands.executeCommand("cursorLeft")
 			vscode.commands.executeCommand("editor.action.transposeLetters")
 			vscode.commands.executeCommand("cursorLeft")
 		}),
 
-		vscode.commands.executeCommand("quickNav.copyCaretLeftAction",() => {
+		vscode.commands.registerCommand("quickNav.copyCaretLeftAction", () => {
 			const editor = vscode.window.activeTextEditor;
 			if (!editor) {
 			  return;
