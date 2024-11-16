@@ -60,6 +60,22 @@ function activate(context) {
 			editor.edit(editBuilder => {
 			  selections.forEach(selection => {
 				editBuilder.insert(
+				  selection.start,
+				  editor.document.getText(selection)
+				)
+			  })
+			})
+		}),
+
+		vscode.commands.executeCommand("quickNav.copyCaretRightAction",() => {
+			const editor = vscode.window.activeTextEditor;
+			if (!editor) {
+			  return;
+			}
+			const selections = editor.selections;
+			editor.edit(editBuilder => {
+			  selections.forEach(selection => {
+				editBuilder.insert(
 				  selection.end,
 				  editor.document.getText(selection)
 				)
