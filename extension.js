@@ -1,12 +1,9 @@
 const vscode = require("vscode");
 
-// command to allow customizing how many lines are moved in ctrl+alt
-
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-  console.log('Congratulations, your extension "quickNav" is now active!');
   context.subscriptions.push(
     vscode.commands.registerCommand("quickNav.jumpCursorUp", () => {
       vscode.commands.executeCommand("cursorMove", {
@@ -90,11 +87,6 @@ function activate(context) {
         });
       });
     })
-
-
-
-
-	
   );
 }
 
