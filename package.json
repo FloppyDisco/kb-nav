@@ -249,6 +249,12 @@
         "when": "textInputFocus && !editorHasSelection"
       },
       {
+        "key": "shift+win+left",
+        "mac": "shift+ctrl+left",
+        "command": "quickNav.copyCaretLeftAction",
+        "when": "textInputFocus && editorHasSelection"
+      },
+      {
         "key": "win+right",
         "mac": "ctrl+right",
         "command": "editor.action.moveCarretRightAction",
