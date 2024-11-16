@@ -24,12 +24,7 @@
         }
       }
     },
-    "commands": [
-      {
-        "command": "quickNav.helloWorld",
-        "title": "Hello World"
-      }
-    ],
+    "commands": [],
     "keybindings": [
       {
         "key": "ctrl+up",
