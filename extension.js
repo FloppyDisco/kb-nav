@@ -50,6 +50,22 @@ function activate(context) {
 			vscode.commands.executeCommand("editor.action.transposeLetters")
 			vscode.commands.executeCommand("cursorLeft")
 		}),
+
+		vscode.commands.executeCommand("quickNav.copyCaretLeftAction",() => {
+			const editor = vscode.window.activeTextEditor;
+			if (!editor) {
+			  return;
+			}
+			const selections = editor.selections;
+			editor.edit(editBuilder => {
+			  selections.forEach(selection => {
+				editBuilder.insert(
+				  selection.end,
+				  editor.document.getText(selection)
+				)
+			  })
+			})
+		}),
 	);
 }
 
