@@ -257,6 +257,12 @@
         "when": "textInputFocus && editorHasSelection"
       },
       {
+        "key": "shift+win+left",
+        "mac": "shift+ctrl+left",
+        "command": "quickNav.copyCharacterLeftAction",
+        "when": "textInputFocus && !editorHasSelection"
+      },
+      {
         "key": "win+right",
         "mac": "ctrl+right",
         "command": "editor.action.moveCarretRightAction",
@@ -273,6 +279,12 @@
         "mac": "shift+ctrl+right",
         "command": "quickNav.copyCaretRightAction",
         "when": "textInputFocus && editorHasSelection"
+      },
+      {
+        "key": "shift+win+right",
+        "mac": "shift+ctrl+right",
+        "command": "quickNav.copyCharacterRightAction",
+        "when": "textInputFocus && !editorHasSelection"
       },
       {
         "key": "alt+up",

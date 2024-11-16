@@ -86,6 +86,54 @@ function activate(context) {
           );
         });
       });
+    }),
+
+    vscode.commands.registerCommand("quickNav.copyCharacterLeftAction", () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+      const selections = editor.selections;
+      editor.edit((editBuilder) => {
+        selections.forEach((selection) => {
+          editBuilder.insert(
+            selection.start,
+            editor.document.getText(
+              new vscode.Range(
+                new vscode.Position(selection.active.line, selection.active.character -1),
+                selection.active
+              )
+            )
+          );
+        });
+      });
+      vscode.commands.executeCommand("cursorLeft")
+    }),
+
+    vscode.commands.registerCommand("quickNav.copyCharacterRightAction", () => {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) {
+        return;
+      }
+      function getPrevCharacter(selection){
+        const cursorPosition = selection.active
+        const previousPosition = new vscode.Position(cursorPosition.line, cursorPosition.character - 1)
+        return editor.document.getText(new vscode.Range(previousPosition, cursorPosition))
+      }
+      const selections = editor.selections;
+      editor.edit((editBuilder) => {
+        selections.forEach((selection) => {
+          editBuilder.insert(
+            selection.start,
+            editor.document.getText(
+              new vscode.Range(
+                new vscode.Position(selection.active.line, selection.active.character -1),
+                selection.active
+              )
+            )
+          );
+        });
+      });
     })
   );
 }
