@@ -334,7 +334,7 @@
         "command": "quickNav.copyCaretLeftAction",
         "when": "textInputFocus && editorHasSelection"
       },
-      
+
       //   ^ Right
       // -----------
       // Move Caret Right
@@ -349,6 +349,12 @@
         "mac": "ctrl+right",
         "command": "editor.action.transposeLetters",
         "when": "textInputFocus && !editorHasSelection"
+      },
+      {
+        "key": "shift+win+right",
+        "mac": "shift+ctrl+right",
+        "command": "quickNav.copyCaretRightAction",
+        "when": "textInputFocus && editorHasSelection"
       },
       // remove
       {
