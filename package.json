@@ -1,8 +1,8 @@
 {
-  "name": "quick-nav",
-  "displayName": "QuickNav",
+  "name": "keyboard-navigation",
+  "displayName": "Keyboard Navigation",
   "description": "Provides an organized set of keyboard shortcuts for text navigation",
-  "repository": "https://github.com/FloppyDisco/quick-nav",
+  "repository": "https://github.com/FloppyDisco/kb-nav",
   "version": "0.0.3",
   "engines": {
     "vscode": "^1.95.0"
