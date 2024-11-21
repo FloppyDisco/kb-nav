@@ -5,55 +5,55 @@ const vscode = require("vscode");
  */
 function activate(context) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("quickNav.jumpCursorUp", () => {
+    vscode.commands.registerCommand("kb-nav.jumpCursorUp", () => {
       vscode.commands.executeCommand("cursorMove", {
         to: "up",
         by: "line",
         value: vscode.workspace
-          .getConfiguration("quickNav")
+          .getConfiguration("kb-nav")
           .get("numberOfLinesToJump"),
       });
     }),
 
-    vscode.commands.registerCommand("quickNav.jumpCursorDown", () => {
+    vscode.commands.registerCommand("kb-nav.jumpCursorDown", () => {
       vscode.commands.executeCommand("cursorMove", {
         to: "down",
         by: "line",
         value: vscode.workspace
-          .getConfiguration("quickNav")
+          .getConfiguration("kb-nav")
           .get("numberOfLinesToJump"),
       });
     }),
 
-    vscode.commands.registerCommand("quickNav.jumpCursorUpSelect", () => {
+    vscode.commands.registerCommand("kb-nav.jumpCursorUpSelect", () => {
       vscode.commands.executeCommand("cursorMove", {
         to: "up",
         by: "line",
         select: true,
         value: vscode.workspace
-          .getConfiguration("quickNav")
+          .getConfiguration("kb-nav")
           .get("numberOfLinesToJump"),
       });
     }),
 
-    vscode.commands.registerCommand("quickNav.jumpCursorDownSelect", () => {
+    vscode.commands.registerCommand("kb-nav.jumpCursorDownSelect", () => {
       vscode.commands.executeCommand("cursorMove", {
         to: "down",
         by: "line",
         select: true,
         value: vscode.workspace
-          .getConfiguration("quickNav")
+          .getConfiguration("kb-nav")
           .get("numberOfLinesToJump"),
       });
     }),
 
-    vscode.commands.registerCommand("quickNav.transposeLettersLeft", () => {
+    vscode.commands.registerCommand("kb-nav.transposeLettersLeft", () => {
       vscode.commands.executeCommand("cursorLeft");
       vscode.commands.executeCommand("editor.action.transposeLetters");
       vscode.commands.executeCommand("cursorLeft");
     }),
 
-    vscode.commands.registerCommand("quickNav.copyCaretLeftAction", () => {
+    vscode.commands.registerCommand("kb-nav.copyCaretLeftAction", () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         return;
@@ -62,17 +62,17 @@ function activate(context) {
 	  const originalSelections = [];
       editor.edit((editBuilder) => {
         selections.forEach((selection) => {
-			originalSelections.push(selection)
-			editBuilder.insert(
-				selection.end,
-				editor.document.getText(selection)
-			)
+          originalSelections.push(selection)
+          editBuilder.insert(
+            selection.end,
+            editor.document.getText(selection)
+          )
         });
       });
 	  editor.selections = originalSelections
     }),
 
-    vscode.commands.registerCommand("quickNav.copyCaretRightAction", () => {
+    vscode.commands.registerCommand("kb-nav.copyCaretRightAction", () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         return;
@@ -88,7 +88,7 @@ function activate(context) {
       });
     }),
 
-    vscode.commands.registerCommand("quickNav.copyCharacterLeftAction", () => {
+    vscode.commands.registerCommand("kb-nav.copyCharacterLeftAction", () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         return;
@@ -110,15 +110,10 @@ function activate(context) {
       vscode.commands.executeCommand("cursorLeft")
     }),
 
-    vscode.commands.registerCommand("quickNav.copyCharacterRightAction", () => {
+    vscode.commands.registerCommand("kb-nav.copyCharacterRightAction", () => {
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         return;
-      }
-      function getPrevCharacter(selection){
-        const cursorPosition = selection.active
-        const previousPosition = new vscode.Position(cursorPosition.line, cursorPosition.character - 1)
-        return editor.document.getText(new vscode.Range(previousPosition, cursorPosition))
       }
       const selections = editor.selections;
       editor.edit((editBuilder) => {

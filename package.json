@@ -17,10 +17,10 @@
   "contributes": {
     "configuration": {
       "properties": {
-        "quickNav.numberOfLinesToJump": {
+        "kb-nav.numberOfLinesToJump": {
           "type": "number",
           "default": 3,
-          "description": "The number of lines the cursor will jump when `quickNav.jumpCursorUp` or `quickNav.jumpCursorDown` is called"
+          "description": "The number of lines the cursor will jump when `kb-nav.jumpCursorUp` or `kb-nav.jumpCursorDown` is called"
         }
       }
     },
@@ -189,25 +189,25 @@
       {
         "key": "alt+win+up",
         "mac": "alt+ctrl+up",
-        "command": "quickNav.jumpCursorUp",
+        "command": "kb-nav.jumpCursorUp",
         "when": "editorTextFocus"
       },
       {
         "key": "shift+alt+win+up",
         "mac": "shift+alt+ctrl+up",
-        "command": "quickNav.jumpCursorUpSelect",
+        "command": "kb-nav.jumpCursorUpSelect",
         "when": "editorTextFocus"
       },
       {
         "key": "alt+win+down",
         "mac": "alt+ctrl+down",
-        "command": "quickNav.jumpCursorDown",
+        "command": "kb-nav.jumpCursorDown",
         "when": "editorTextFocus"
       },
       {
         "key": "shift+alt+win+down",
         "mac": "shift+alt+ctrl+down",
-        "command": "quickNav.jumpCursorDownSelect",
+        "command": "kb-nav.jumpCursorDownSelect",
         "when": "editorTextFocus"
       },
       {
@@ -243,19 +243,19 @@
       {
         "key": "win+left",
         "mac": "ctrl+left",
-        "command": "quickNav.transposeLettersLeft",
+        "command": "kb-nav.transposeLettersLeft",
         "when": "textInputFocus && !editorHasSelection"
       },
       {
         "key": "shift+win+left",
         "mac": "shift+ctrl+left",
-        "command": "quickNav.copyCaretLeftAction",
+        "command": "kb-nav.copyCaretLeftAction",
         "when": "textInputFocus && editorHasSelection"
       },
       {
         "key": "shift+win+left",
         "mac": "shift+ctrl+left",
-        "command": "quickNav.copyCharacterLeftAction",
+        "command": "kb-nav.copyCharacterLeftAction",
         "when": "textInputFocus && !editorHasSelection"
       },
       {
@@ -273,13 +273,13 @@
       {
         "key": "shift+win+right",
         "mac": "shift+ctrl+right",
-        "command": "quickNav.copyCaretRightAction",
+        "command": "kb-nav.copyCaretRightAction",
         "when": "textInputFocus && editorHasSelection"
       },
       {
         "key": "shift+win+right",
         "mac": "shift+ctrl+right",
-        "command": "quickNav.copyCharacterRightAction",
+        "command": "kb-nav.copyCharacterRightAction",
         "when": "textInputFocus && !editorHasSelection"
       },
       {
