@@ -1,267 +1,126 @@
-```
-  // |--------------------------|
-  // |        Navigation        |
-  // |--------------------------|
+# Keyboard Nav
+This extensions strives to organize the text navigation shortcuts in VS Code into a more complete and memorable system.
 
-  // |-----------------------------|
-  // |        ⌘ + direction        |
-  // |-----------------------------|
-  // Move to the far end in each direction
+Many of the shortcuts provided by this extension are the same as the default keybindings; however, a few key shortcuts have been moved, and a few new commands created to make everything more uniform.
 
-  //   ⌘ Up
-  // --------
-  // Move to the Top of the document
+- (⌘ + direction) will move the cursor maximally
+- (⌥ + direction) will move the cursor by whitespace
+- (^ + direction) will move the content under the cursor
 
-  //   ⌘ Down
-  // ----------
-  // Move to the Bottom of the document
+The number of lines that the Cursor will move Up/Down with a (^ ⌥) keybinding is configurable in settings.
 
-  //   ⌘ Left
-  // ----------
-  // Move Left to the Start of the Line
+Here is a list of all the keybindings provided:
 
-  //   ⌘ Right
-  // -----------
-  // Move Right to the End of the Line
+## ⌘ + direction
+Move to the far end in each direction
 
-  // ⇧ to select with all
+- **(⌘ Up)**
+Move to the Top of the document.
+Add (⬆︎Shift) to select.
 
-  //   ⌘ Backspace
-  // ---------------
-  // Delete Left to the Start of the Line
+- **(⌘ Down)**
+Move to the Bottom of the document.
+Add (⬆︎Shift) to select.
 
-  //   ⌘ Delete
-  // ------------
-  // Delete Right to the End of the Line
+- **(⌘ Left)**
+Move Left to the Start of the Line.
+Add (⬆︎Shift) to select.
 
-  // |-----------------------------|
-  // |        ⌥ + direction        |
-  // |-----------------------------|
-  // Move by whitespace
+- **(⌘ Right)**
+Move Right to the End of the Line.
+Add (⬆︎Shift) to select.
 
-  //   ⌥ Up
-  // --------
-  // move to the prev blank line
-  {
-    "key": "alt+up",
-    "command": "cursorMove",
-    "args": {
-      "to": "prevBlankLine",
-    },
-    "when": "editorTextFocus"
-  },
+- **(⌘ Backspace)**
+Delete Left to the Start of the Line
 
-  // ⇧ to select
-  {
-    "key": "shift+alt+up",
-    "command": "cursorMove",
-    "args": {
-      "to": "prevBlankLine",
-      "select": true
-    },
-    "when": "editorTextFocus"
-  },
-
-  //   ⌥ Down
-  // ----------
-  // move to the next blank line
-  {
-    "key": "alt+down",
-    "command": "cursorMove",
-    "args": {
-      "to": "nextBlankLine",
-    },
-    "when": "editorTextFocus"
-  },
-
-  // ⇧ to select
-  {
-    "key": "shift+alt+down",
-    "command": "cursorMove",
-    "args": {
-      "to": "nextBlankLine",
-      "select": true
-    },
-    "when": "editorTextFocus"
-  },
+- **(⌘ Delete)**
+Delete Right to the End of the Line
 
 
+## ⌥ + direction
+Move by whitespace
 
+- **(⌥ Up)**
+move to the prev blank line.
+Add (⬆︎Shift) to select.
 
-  //   ⌥ Left
-  // ----------
-  // Move One Whole Word to the Left
+- **(⌥ Down)**
+move to the next blank line.
+Add (⬆︎Shift) to select.
 
-  //   ⌥ Right
-  // -----------
-  // Move One Whole Word to the Right
+- **(⌥ Left)**
+Move One Whole Word to the Left.
+Add (⬆︎Shift) to select.
 
-  //   ⌥ Backspace
-  // ---------------
-  // Delete One Whole Word to the Left
+- **(⌥ Right)**
+Move One Whole Word to the Right.
+Add (⬆︎Shift) to select.
 
-  //   ⌥ Delete
-  // ------------
-  // Delete One Whole Word to the Right
+- **(⌥ Backspace)**
+Delete One Whole Word to the Left
 
-  // |---------------------------------|
-  // |        ^ + ⌥ + direction        |
-  // |---------------------------------|
-  // These are exactly like the ⌥ keys,
-  // but with a bit more "contol"...
+- **(⌥ Delete)**
+Delete One Whole Word to the Right
 
-  //   ^ ⌥ Left
-  // ------------
-  // MoveOneWordPART to_the_Left
+## ^ + ⌥ + direction
+These are exactly like the (⌥Option) keys,
+but with a bit more "contol"...
 
-  //   ^ ⌥ Right
-  // -------------
-  // MoveOneWordPART to_the_Right
+- **(^ ⌥ Up)**
+Jump up by a few lines.
+Add (⬆︎Shift) to select.
 
-  //   ^ ⌥ Backspace
-  // -----------------
-  // DeleteOneWordPART to_the_Left
+- **(^ ⌥ Down)**
+Jump down by a few lines.
+Add (⬆︎Shift) to select.
 
-  //   ^ ⌥ Delete
-  // --------------
-  // DeleteOneWordPART to_the_Right
+- **(^ ⌥ Left)**
+MoveOneWordPART left.
+Add (⬆︎Shift) to select.
 
-  //   ^ ⌥ Up
-  // -------------
-  // Move Up part of a Page
-  {
-    "key": "alt+ctrl+up",
-    //  command created in commands.commands
-    "command": "editor.action.jumpLinesUp",
-    "when": "editorTextFocus"
-  },
-  // ⇧ to select
-  {
-    "key": "shift+alt+ctrl+up",
-    //  command created in commands.commands
-    "command": "editor.action.jumpLinesUpSelect",
-    "when": "editorTextFocus"
-  },
+- **(^ ⌥ Right)**
+MoveOneWordPART right.
+Add (⬆︎Shift) to select.
 
-  //   ^ ⌥ Down
-  // -------------
-  // Move Down part of a Page
-  {
-    "key": "alt+ctrl+down",
-    //  command created in commands.commands
-    "command": "editor.action.jumpLinesDown",
-    "when": "editorTextFocus"
-  },
-  // ⇧ to select
-  {
-    "key": "shift+alt+ctrl+down",
-    //  command created in commands.commands
-    "command": "editor.action.jumpLinesDownSelect",
-    "when": "editorTextFocus"
-  },
+- **(^ ⌥ Backspace)**
+DeleteOneWordPART left
 
-  // |-----------------------------|
-  // |        ^ + direction        |
-  // |-----------------------------|
-  // Move content using the cursor
+- **(^ ⌥ Delete)**
+DeleteOneWordPART right
 
-  //   ^ Up
-  // --------
-  // Move Line Above
-  {
-    "key": "ctrl+up",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  // ⇧ to Copy Line Above
-  {
-    "key": "ctrl+shift+up",
-    "command": "editor.action.copyLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+## ^ + direction
+Moving content using the cursor!
+These keybindings will work with a selection or without a selection.
+They can move content, or copy it.
 
-  //   ^ Down
-  // ----------
-  // Move Line Below
-  {
-    "key": "ctrl+down",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  // ⇧ to Copy Line Below
-  // ⇧ to Copy Line Below
-  // ⇧ to Copy Line Below
-  // ⇧ to Copy Line Below
-  // ⇧ to Copy Line Below
-  {
-    "key": "ctrl+shift+down",
-    "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+- **(^ Up)**
+Move Lines Up.
+Add (⬆︎Shift) to copy lines.
 
-  //   ^ Left
-  // ----------
-  // Move Caret Left
-  {
-    "key": "ctrl+left",
-    "command": "editor.action.moveCarretLeftAction",
-    "when": "editorTextFocus && editorHasSelection"
-  },
-  {
-    "key": "ctrl+left",
-    //  command created in commands.commands
-    "command": "editor.action.transposeLettersLeft",
-    "when": "textInputFocus && !editorHasSelection"
-  },
+- **(^ Down)**
+Move Lines Down.
+Add (⬆︎Shift) to copy lines.
 
-  //   ^ Right
-  // -----------
-  // Move Caret Right
-  {
-    "key": "ctrl+right",
-    "command": "editor.action.moveCarretRightAction",
-    "when": "editorTextFocus && editorHasSelection"
-  },
-  {
-    "key": "ctrl+right",
-    "command": "editor.action.transposeLetters",
-    "when": "textInputFocus && !editorHasSelection"
-  },
+- **(^ Left)**
+Move Caret Left.
+Add (⬆︎Shift) to copy character or selection.
 
-  // remove old navigation keybindings
-  {
-    "key": "ctrl+t",
-    "command": "-editor.action.transposeLetters",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+up",
-    "command": "-editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+alt+up",
-    "command": "-editor.action.copyLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+down",
-    "command": "-editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+alt+down",
-    "command": "-editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+- **(^ Right)**
+Move Caret Right.
+Add (⬆︎Shift) to copy character or selection.
 
-```
- 
+#### Enter Keybindings:
+these move content!
 
+- **(^ Enter)**
+Insert New Line Below
 
+- **(⬆︎Shift ^ Enter)**
+Insert New Line Above
 
- 5 test some stuff
+- **(⌘ Enter)**
+Go to the Definition
+same as ⌘ LeftClick!
+  
 
- 5 test some stuff
-
- 5 test some stuff
+  
