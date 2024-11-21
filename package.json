@@ -24,7 +24,44 @@
         }
       }
     },
-    "commands": [],
+    "commands": [
+      {
+        "command": "kb-nav.jumpCursorUp",
+        "title": "jumpCursorUp"
+      },
+      {
+        "command": "kb-nav.jumpCursorDown",
+        "title": "jumpCursorDown"
+      },
+      {
+        "command": "kb-nav.jumpCursorUpSelect",
+        "title": "jumpCursorUpSelect"
+      },
+      {
+        "command": "kb-nav.jumpCursorDownSelect",
+        "title": "jumpCursorDownSelect"
+      },
+      {
+        "command": "kb-nav.transposeLettersLeft",
+        "title": "transposeLettersLeft"
+      },
+      {
+        "command": "kb-nav.copyCaretLeftAction",
+        "title": "copyCaretLeftAction"
+      },
+      {
+        "command": "kb-nav.copyCaretRightAction",
+        "title": "copyCaretRightAction"
+      },
+      {
+        "command": "kb-nav.copyCharacterLeftAction",
+        "title": "copyCharacterLeftAction"
+      },
+      {
+        "command": "kb-nav.copyCharacterRightAction",
+        "title": "copyCharacterRightAction"
+      }
+    ],
     "keybindings": [
       {
         "key": "ctrl+up",
