@@ -1,6 +1,6 @@
 {
-  "name": "keyboard-navigation",
-  "displayName": "Keyboard Navigation",
+  "name": "keyboard-navigator",
+  "displayName": "Keyboard Navigator",
   "description": "Provides an organized set of keyboard shortcuts for text navigation",
   "repository": "https://github.com/FloppyDisco/kb-nav",
   "version": "0.0.4",
@@ -8,7 +8,7 @@
     "vscode": "^1.95.0"
   },
   "categories": [
-    "Other"
+    "Keymaps"
   ],
   "activationEvents": [
     "onStartupFinished"
