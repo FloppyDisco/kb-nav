@@ -1,7 +1,7 @@
 # Keyboard Nav
 This extensions strives to organize the text navigation shortcuts in VS Code into a more complete and memorable system.
 
-Many of the shortcuts provided by this extension are the same as the default keybindings; however, a few key shortcuts have been moved, and a few new commands created to make everything more uniform.
+Many of the shortcuts provided by this extension are the same as the default keybindings; however, a few important shortcuts have been moved, and a few new commands created to make everything more uniform.
 
 - (⌘ + direction) will move the cursor maximally
 - (⌥ + direction) will move the cursor by whitespace
