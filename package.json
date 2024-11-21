@@ -2,6 +2,7 @@
   "name": "keyboard-navigator",
   "displayName": "Keyboard Navigator",
   "description": "Provides an organized set of keyboard shortcuts for text navigation",
+  "publisher": "bs-code",
   "repository": "https://github.com/FloppyDisco/kb-nav",
   "version": "0.0.5",
   "engines": {
