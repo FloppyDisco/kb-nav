@@ -59,17 +59,17 @@ function activate(context) {
         return;
       }
       const selections = editor.selections;
-	  const originalSelections = [];
-      editor.edit((editBuilder) => {
-        selections.forEach((selection) => {
-          originalSelections.push(selection)
-          editBuilder.insert(
-            selection.end,
-            editor.document.getText(selection)
-          )
+      const originalSelections = [];
+        editor.edit((editBuilder) => {
+          selections.forEach((selection) => {
+            originalSelections.push(selection)
+            editBuilder.insert(
+              selection.end,
+              editor.document.getText(selection)
+            )
+          });
         });
-      });
-	  editor.selections = originalSelections
+      editor.selections = originalSelections
     }),
 
     vscode.commands.registerCommand("kb-nav.copyCaretRightAction", () => {
